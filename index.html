@@ -15,17 +15,26 @@
         <form method="GET" action="results.html">
             <div>
                 <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
+                <span class="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" minlength="2" maxlength="35">
                 <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+                <span class="required-field">*</span>
+                <input type="text" id="lastname" name="lastname" minlength="2" maxlength="35">
+                <label for="age">Your Age</label>
+                <!-- <span class="required-field">*</span> -->
+                <input type="number" name="age" id="age" min="21" max="120">
+                <label for="password">Your Password</label>
+                <span class="required-field">*</span>
+                <input type="password" id="password" name="password" minlength="6" pattern="[A-Za-z0-9]{6}" title="Has to be 6 digits only">
             </div>
             <fieldset>
                 <legend>Your Contact Info</legend>
                 <div>
                     <label for="email">Your Email</label>
+                    <span class="required-field">*</span>
                     <input type="email" id="email" name="email">
                 </div>
-                <div>
+                <div>  
                     <label for="address">Your Street Address</label>
                     <input type="text" id="address" name="address">
                 </div>
@@ -86,7 +95,8 @@
                         <option value="WY">Wyoming</option>
                     </datalist>
                     <label for="zip">Your Zipcode</label>
-                    <input type="text" id="zip" name="zip">
+                    <input type="text" id="zip" name="zip" pattern="[0-9]{5}" title="5 digit code">
+                    <!-- this means that your country code is 5 digit from 0=9 -->
                 </div>
             </fieldset>
 
